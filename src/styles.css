@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
+.launch {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    margin: 0;
+    font-weight: bold;
+}
+
+.launch > p,
+.launch > img {
+    flex: 0 1 auto;
 }

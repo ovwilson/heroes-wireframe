@@ -1,0 +1,22 @@
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+@mixin layout-theme() {
+    header {
+        font-weight: bold;
+    }
+    main {
+        @extend header;
+    }
+    footer {
+        @extend header;
+        padding: 20px;
+    }
+}
+
+@include layout-theme();
