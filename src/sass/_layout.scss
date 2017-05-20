@@ -1,7 +1,7 @@
 html,
-body {
+body, md-sidenav-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     height: 100%;
     margin: 0;
 }
