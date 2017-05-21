@@ -1,14 +1,31 @@
 <md-toolbar color="primary">
-    <span>Heroes Wireframe Beta v1</span>
+    <a md-button (click)="openStart()">
+        <md-icon>menu</md-icon>
+    </a>
+    <span fxFlex>Heroes Wireframe Beta v1</span>
+    <a md-button (click)="openEnd()" >
+        <md-icon>folder</md-icon>
+    </a>
 </md-toolbar>
 
 <md-sidenav-container fxFlex>
+
+
+    <md-sidenav mode="over" align="start" [opened]="(sideNavs$ | async).start">
+        <div fxLayout="column">
+            <a md-button (click)="closeStart()" (keyup.enter)="closeStart()" fxFlexAlign="end">
+                <md-icon>keyboard_arrow_right</md-icon>
+            </a>
+            <p>List Goes here sdfafsfasfasd</p>
+        </div>
+    </md-sidenav>
 
     <header>
 
     </header>
 
     <main fxLayout="column" fxLayoutAlign="center center">
+
         <h1>Main Content Goes here</h1>
         <p>This is using Angular/Flex-Layout</p>
     </main>
@@ -18,9 +35,11 @@
     </footer>
 
 
-    <md-sidenav mode="side" align="end" opened="true">
+    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end">
         <div fxLayout="column">
-            <h1>Side Nav</h1>
+            <a md-button (click)="closeEnd()" (keyup.enter)="closeEnd()" fxFlexAlign="start">
+                <md-icon>keyboard_arrow_left</md-icon>
+            </a>
             <p>Secondary Content Goes here</p>
         </div>
     </md-sidenav>
