@@ -1,0 +1,14 @@
+@mixin launch-theme() {
+    .launch {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-weight: bold;
+        p,
+        img {
+            flex: 0 1 auto;
+        }
+    }
+}

@@ -21,7 +21,8 @@
       "styles": [
         "styles.css",
         "sass/_variables.scss",
-        "sass/_layout.scss"
+        "sass/_layout.scss",
+        "sass/_deeppurple-amber.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -1,21 +1,28 @@
-<md-sidenav-container>
+<md-toolbar color="primary">
+    <span>Heroes Wireframe Beta v1</span>
+</md-toolbar>
 
-    <header fxLayout="column" fxLayoutAlign="start center" fxFlex>
-        <h1>Heroes Wireframe</h1>
+<md-sidenav-container fxFlex>
+
+    <header>
+
     </header>
 
-    <main fxLayout="column" fxFlex>
-        <p>Main Content Goes here</p>
+    <main fxLayout="column" fxLayoutAlign="center center">
+        <h1>Main Content Goes here</h1>
         <p>This is using Angular/Flex-Layout</p>
     </main>
 
-    <footer fxLayout="column" fxLayoutAlign="end center" fxFlex>
-        <p>Heroes Wireframe Beta v1</p>
-        <img src="favicon.ico">
+    <footer>
+
     </footer>
 
+
     <md-sidenav mode="side" align="end" opened="true">
-        <p>Secondary Content Goes here</p>
+        <div fxLayout="column">
+            <h1>Side Nav</h1>
+            <p>Secondary Content Goes here</p>
+        </div>
     </md-sidenav>
 
 </md-sidenav-container>
