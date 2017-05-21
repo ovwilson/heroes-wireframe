@@ -37,5 +37,9 @@ export class AppComponent {
     this.store.dispatch(new fromSideNavActions.SideNavEndHide());
   }
 
+  onClose() {
+    console.log('sidenav closed ..')
+  }
+
 
 }

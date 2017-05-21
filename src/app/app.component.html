@@ -35,7 +35,8 @@
     </footer>
 
 
-    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end">
+    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end"
+    (close)="onClose($event)">
         <div fxLayout="column">
             <a md-button (click)="closeEnd()" (keyup.enter)="closeEnd()" fxFlexAlign="start">
                 <md-icon>keyboard_arrow_left</md-icon>
