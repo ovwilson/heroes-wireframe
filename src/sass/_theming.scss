@@ -1,0 +1,21 @@
+@import "~@angular/material/_theming.scss";
+@include mat-core();
+
+@import "./_variables.scss";
+@import "./_layout.scss";
+@import "./_sidenav.scss";
+
+// Deep Purple Amber.
+$lightprimary: mat-palette($mat-deep-purple);
+$lightaccent : mat-palette($mat-amber, A200, A100, A400);
+$lighttheme: mat-light-theme($lightprimary, $lightaccent);
+
+// Dark theme Purple Green
+$darkprimary: mat-palette($mat-purple, 700, 500, 800);
+$darkaccent:  mat-palette($mat-green, A200, A100, A400);
+$darktheme: mat-dark-theme($darkprimary, $darkaccent);
+
+// Include all theme styles for the components.
+@include angular-material-theme($lighttheme);
+@include layout-theme();
+@include sidenav-theme($darktheme);

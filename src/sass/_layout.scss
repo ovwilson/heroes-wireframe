@@ -1,11 +1,3 @@
-html,
-body, md-sidenav-container {
-    display: flex;
-    flex-direction: column !important;
-    height: 100%;
-    margin: 0;
-}
-
 @mixin layout-theme() {
     header {
         font-weight: bold;
@@ -18,5 +10,3 @@ body, md-sidenav-container {
         padding: 20px;
     }
 }
-
-@include layout-theme();

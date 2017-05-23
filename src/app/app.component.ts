@@ -19,22 +19,12 @@ export class AppComponent {
     this.sideNavs$ = this.store.select(state => state.sidenavs);
   }
 
-  title = 'Heroes Wireframe Beta';
-
-  openStart() {
-    this.store.dispatch(new fromSideNavActions.SideNavStartShow());
+  toggleStart() {
+    this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
   }
 
-  closeStart() {
-    this.store.dispatch(new fromSideNavActions.SideNavStartHide());
-  }
-
-  openEnd() {
-    this.store.dispatch(new fromSideNavActions.SideNavEndShow());
-  }
-
-  closeEnd() {
-    this.store.dispatch(new fromSideNavActions.SideNavEndHide());
+  toggleEnd() {
+    this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
   }
 
   onClose() {

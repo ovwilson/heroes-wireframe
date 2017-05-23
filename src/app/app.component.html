@@ -1,9 +1,9 @@
 <md-toolbar color="primary">
-    <a md-button (click)="openStart()">
+    <a md-button (click)="toggleStart()">
         <md-icon>menu</md-icon>
     </a>
     <span fxFlex>Heroes Wireframe Beta v1</span>
-    <a md-button (click)="openEnd()" >
+    <a md-button (click)="toggleEnd()" >
         <md-icon>folder</md-icon>
     </a>
 </md-toolbar>
@@ -13,7 +13,7 @@
 
     <md-sidenav mode="over" align="start" [opened]="(sideNavs$ | async).start">
         <div fxLayout="column">
-            <a md-button (click)="closeStart()" (keyup.enter)="closeStart()" fxFlexAlign="end">
+            <a md-button (click)="toggleStart()" (keyup.enter)="toggleStart()" fxFlexAlign="end">
                 <md-icon>keyboard_arrow_right</md-icon>
             </a>
             <p>List Goes here sdfafsfasfasd</p>
@@ -38,7 +38,7 @@
     <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end"
     (close)="onClose($event)">
         <div fxLayout="column">
-            <a md-button (click)="closeEnd()" (keyup.enter)="closeEnd()" fxFlexAlign="start">
+            <a md-button (click)="toggleEnd()" (keyup.enter)="toggleEnd()" fxFlexAlign="start">
                 <md-icon>keyboard_arrow_left</md-icon>
             </a>
             <p>Secondary Content Goes here</p>

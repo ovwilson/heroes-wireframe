@@ -10,14 +10,10 @@ const initialState: State = { start: false, end: false };
 
 export function sidenavs(state = initialState, action: fromSideNavActions.All) {
     switch (action.type) {
-        case fromSideNavActions.SIDENAV_START_SHOW:
-            return Object.assign({}, { start: true, end: state.end });
-        case fromSideNavActions.SIDENAV_START_HIDE:
-            return Object.assign({}, { start: false, end: state.end });
-        case fromSideNavActions.SIDENAV_END_SHOW:
-            return Object.assign({}, { start: state.start, end: true });
-        case fromSideNavActions.SIDENAV_END_HIDE:
-            return Object.assign({}, { start: state.start, end: false });
+        case fromSideNavActions.SIDENAV_START_TOGGLE:
+            return Object.assign({}, { start: !state.start, end: state.end });
+        case fromSideNavActions.SIDENAV_END_TOGGLE:
+            return Object.assign({}, { start: state.start, end: !state.end });
         default:
             return state;
     }
