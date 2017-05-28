@@ -3,7 +3,7 @@
         <md-icon>menu</md-icon>
     </a>
     <span fxFlex>Heroes Wireframe Beta v1</span>
-    <a md-button (click)="toggleEnd()" >
+    <a md-button (click)="toggleEnd()">
         <md-icon>folder</md-icon>
     </a>
 </md-toolbar>
@@ -24,10 +24,13 @@
 
     </header>
 
-    <main fxLayout="column" fxLayoutAlign="center center">
-
-        <h1>Main Content Goes here</h1>
-        <p>This is using Angular/Flex-Layout</p>
+    <main fxLayout="column" fxLayoutAlign="start center">
+        {{animationState}}
+        <a href="javascript:void(0)" (click)="animateToggle()">Animate Me</a>
+        <div [@wireframeAnimation]="animationState" fxLayout="column" fxLayoutAlign="start center">
+            <h1 fxFlex> Main Content Goes here</h1>
+            <p fxFlex>This is using Angular/Flex-Layout</p>
+        </div>
     </main>
 
     <footer>
@@ -35,8 +38,7 @@
     </footer>
 
 
-    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end"
-    (close)="onClose($event)">
+    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end" (close)="onClose($event)">
         <div fxLayout="column">
             <a md-button (click)="toggleEnd()" (keyup.enter)="toggleEnd()" fxFlexAlign="start">
                 <md-icon>keyboard_arrow_left</md-icon>
