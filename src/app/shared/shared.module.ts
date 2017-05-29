@@ -7,7 +7,6 @@ import { SidenavStartComponent } from './../components/sidenav-start/sidenav-sta
 import { SidenavEndComponent } from './../components/sidenav-end/sidenav-end.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule,

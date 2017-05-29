@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +13,7 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     MdInputModule, MdCheckboxModule, MdSelectModule, MdSidenavModule, MdToolbarModule,
@@ -20,6 +22,7 @@ import {
   declarations: [],
   exports: [
     CommonModule,
+    BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     MdInputModule, MdCheckboxModule, MdSelectModule, MdSidenavModule, MdToolbarModule,
