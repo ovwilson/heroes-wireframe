@@ -14,6 +14,8 @@ export function sidenavs(state = initialState, action: fromSideNavActions.All) {
             return Object.assign({}, { start: !state.start, end: state.end });
         case fromSideNavActions.SIDENAV_END_TOGGLE:
             return Object.assign({}, { start: state.start, end: !state.end });
+        case fromSideNavActions.SIDENAV_RESET:
+            return Object.assign({}, { start: false, end: false });
         default:
             return state;
     }

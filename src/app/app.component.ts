@@ -17,7 +17,7 @@ import * as fromSideNavActions from './actions/sidenavs';
       state('end', style({ transform: 'translateX(100%) scale(0)' })),
       // transition('start <=> end', animate('100ms ease-out')),
       // transition('end => start', animate('100ms ease-in')),
-      transition('void => start', [style({ transform: 'translateX(-100%)' }), animate(200)]),
+      transition('void => start', [style({ transform: 'translateX(-100%)' }), animate(100)]),
       transition('start => end', animate(100, style({ transform: 'translateX(100%) scale(1)' }))),
       transition('void => end', [style({ transform: 'translateX(100%) scale(1)' }), animate(100)]),
       transition('end => start', animate(100, style({ transform: 'translateX(0) scale(1)' })))
@@ -27,26 +27,20 @@ import * as fromSideNavActions from './actions/sidenavs';
 export class AppComponent {
 
   sideNavs$: Observable<any> = Observable.of<any>();
-  animationState = 'start';
 
   constructor(private store: Store<fromRoot.State>) {
     this.sideNavs$ = this.store.select(state => state.sidenavs);
   }
 
-  animateToggle() {
-    this.animationState = (this.animationState === 'start' ? 'end' : 'start');
-  }
-
-  toggleStart() {
-    this.store.dispatch(new fromSideNavActions.SideNavStartToggle());
-  }
-
-  toggleEnd() {
-    this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
+  onToggleSideNav(direction: string) {
+    direction === 'start' ?
+      this.store.dispatch(new fromSideNavActions.SideNavStartToggle()) :
+      this.store.dispatch(new fromSideNavActions.SideNavEndToggle());
   }
 
   onClose() {
-    console.log('sidenav closed ..')
+    console.log('sidenav closed ..');
+    this.store.dispatch(new fromSideNavActions.SideNavReset());
   }
 
 

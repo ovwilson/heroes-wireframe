@@ -1,50 +1,22 @@
-<md-toolbar color="primary">
-    <a md-button (click)="toggleStart()">
-        <md-icon>menu</md-icon>
-    </a>
-    <span fxFlex>Heroes Wireframe Beta v1</span>
-    <a md-button (click)="toggleEnd()">
-        <md-icon>folder</md-icon>
-    </a>
-</md-toolbar>
-
 <md-sidenav-container fxFlex>
 
+    <md-sidenav mode="over" align="start" [opened]="(sideNavs$ | async).start" (close)="onClose($event)">
+        <sidenav-start (onToggleSideNav)="onToggleSideNav($event)"></sidenav-start>
+    </md-sidenav>
 
-    <md-sidenav mode="over" align="start" [opened]="(sideNavs$ | async).start">
-        <div fxLayout="column">
-            <a md-button (click)="toggleStart()" (keyup.enter)="toggleStart()" fxFlexAlign="end">
-                <md-icon>keyboard_arrow_right</md-icon>
-            </a>
-            <p>List Goes here sdfafsfasfasd</p>
-        </div>
+    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end" (close)="onClose($event)">
+        <sidenav-end (onToggleSideNav)="onToggleSideNav($event)"> </sidenav-end>
     </md-sidenav>
 
     <header>
-
+        <navbar (onToggleSideNav)="onToggleSideNav($event)"></navbar>
     </header>
 
     <main fxLayout="column" fxLayoutAlign="start center">
-        {{animationState}}
-        <a href="javascript:void(0)" (click)="animateToggle()">Animate Me</a>
-        <div [@wireframeAnimation]="animationState" fxLayout="column" fxLayoutAlign="start center">
-            <h1 fxFlex> Main Content Goes here</h1>
-            <p fxFlex>This is using Angular/Flex-Layout</p>
-        </div>
+        <router-outlet></router-outlet>
     </main>
 
-    <footer>
+    <footer> </footer>
 
-    </footer>
-
-
-    <md-sidenav mode="side" align="end" [opened]="(sideNavs$ | async).end" (close)="onClose($event)">
-        <div fxLayout="column">
-            <a md-button (click)="toggleEnd()" (keyup.enter)="toggleEnd()" fxFlexAlign="start">
-                <md-icon>keyboard_arrow_left</md-icon>
-            </a>
-            <p>Secondary Content Goes here</p>
-        </div>
-    </md-sidenav>
 
 </md-sidenav-container>
