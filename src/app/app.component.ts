@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs/Observable';
 import * as fromRoot from './reducers/reducers';
-
 import * as fromSideNavActions from './actions/sidenavs';
 
 @Component({
