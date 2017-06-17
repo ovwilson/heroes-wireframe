@@ -17,7 +17,7 @@ db.once('open', function callback() {
         topRated: String
     });
 
-    var heroModel = mongoose.model('Hero', HeroSchema);
+    var heroModel = mongoose.model('heroes', HeroSchema);
     var batman = heroModel({ name: 'Batman', description: 'Caped crusader', topRated: true });
     batman.save(function (err) {
         if (err) throw err;
