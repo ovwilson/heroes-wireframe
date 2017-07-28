@@ -1,0 +1,6 @@
+use test
+db.heroes.find().pretty()
+db.heroes.deleteMany({})
+
+db.heroes.createIndex({"createdAt":1},{expireAfterSeconds:30})
+db.heroes.insertOne({name:'Batman',description:'Test',topRated:true,createdAt:new Date()})

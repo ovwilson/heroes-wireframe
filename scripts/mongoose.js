@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 var mongoose = require('mongoose'),
     config = require('./../config.json'),
     db;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.uri);
+mongoose.connect(process.env.REMOTE_DB);
 db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));

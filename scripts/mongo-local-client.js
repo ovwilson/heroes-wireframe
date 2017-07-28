@@ -1,8 +1,9 @@
-var mongodb = require('mongodb'),
-    config = require('./../config.json'),
-    db;
+require('dotenv').config();
 
-mongodb.MongoClient.connect(config.localUri, function (err, db) {
+var mongodb = require('mongodb'),
+    config = require('./../config.json');
+
+mongodb.MongoClient.connect(process.env.LOCAL_DB, function (err, db) {
     if (err) throw err;
 
     var heroes = db.collection('heroes');

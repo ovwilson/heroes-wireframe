@@ -3,7 +3,7 @@ module.exports = () => {
     files: [
       //'style/calculator.css',
       //{pattern: 'lib/jquery.js', instrument: false},
-      'src/app/*.ts',
+      'src/app/*.ts'
       //'test/helper/template.js'
     ],
     tests: [
